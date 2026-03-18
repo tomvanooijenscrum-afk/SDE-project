@@ -10,23 +10,24 @@
 		});
 	}
 
-	// Futuristic scroll effects
-	var lastScrollTop = 0;
 	var header = document.querySelector('.site-header');
-	
-	window.addEventListener('scroll', function() {
-		var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-		
-		if (scrollTop > lastScrollTop && scrollTop > 100) {
-			// Scrolling down
-			header.style.transform = 'translateY(-100%)';
-		} else {
-			// Scrolling up
-			header.style.transform = 'translateY(0)';
+
+	// Header: fade to white when scrolling down (sticky behavior)
+	if (header) {
+		var ticking = false;
+		function updateHeaderScrolledState() {
+			ticking = false;
+			var scrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
+			header.classList.toggle('is-scrolled', scrollTop > 10);
 		}
-		
-		lastScrollTop = scrollTop;
-	});
+		window.addEventListener('scroll', function() {
+			if (!ticking) {
+				ticking = true;
+				window.requestAnimationFrame(updateHeaderScrolledState);
+			}
+		}, { passive: true });
+		updateHeaderScrolledState();
+	}
 
 	// Add parallax effect to hero section
 	var hero = document.querySelector('.hero');
@@ -113,6 +114,45 @@
 	
 	// Make openBusinessCard globally available
 	window.openBusinessCard = openBusinessCard;
+
+	// Allow keyboard "Enter/Space" on clickable business card previews
+	document.addEventListener('keydown', function(e) {
+		if (e.key !== 'Enter' && e.key !== ' ') return;
+		var target = e.target;
+		if (!(target instanceof HTMLElement)) return;
+		if (target.classList && target.classList.contains('business-card-placeholder') && target.getAttribute('role') === 'button') {
+			e.preventDefault();
+			openBusinessCard();
+		}
+	});
+
+	// Features slider: expand card on hover/focus
+	var cardSlider = document.querySelector('.features .card-slider');
+	if (cardSlider) {
+		var sliderCards = cardSlider.querySelectorAll('.card');
+		function clearExpanded() {
+			cardSlider.classList.remove('has-expanded');
+			sliderCards.forEach(function(c){ c.classList.remove('is-expanded'); });
+		}
+		sliderCards.forEach(function(card){
+			card.setAttribute('tabindex','0');
+			card.addEventListener('mouseenter', function(){
+				cardSlider.classList.add('has-expanded');
+				sliderCards.forEach(function(c){ c.classList.toggle('is-expanded', c === card); });
+			});
+			card.addEventListener('mouseleave', function(){
+				clearExpanded();
+			});
+			card.addEventListener('focus', function(){
+				cardSlider.classList.add('has-expanded');
+				sliderCards.forEach(function(c){ c.classList.toggle('is-expanded', c === card); });
+			});
+			card.addEventListener('blur', function(){
+				clearExpanded();
+			});
+		});
+		cardSlider.addEventListener('mouseleave', clearExpanded);
+	}
 	var form=document.getElementById('contact-form');
 	if(form){
 		var statusEl=form.querySelector('.form-status');

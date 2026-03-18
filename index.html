@@ -7,11 +7,11 @@
 	<meta name="description" content="Constructief advies van ontwerp tot uitvoering. SDE – Bas van Ooijen.">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Gelasio:wght@400;500;600;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="assets/css/styles.css">
 	<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🏗️</text></svg>">
 </head>
-<body>
+<body class="home">
 	<header class="site-header">
 		<div class="container header-inner">
 			<a class="logo" href="index.html">
@@ -45,16 +45,16 @@
 		</section>
 
 		<section class="features">
-			<div class="container grid-3">
-				<div class="card">
+			<div class="container grid-3 card-slider" aria-label="Kernpunten">
+				<div class="card feature-card feature-card--1">
 					<h3>Zakelijk en helder</h3>
 					<p>Heldere communicatie en concrete adviezen waar u direct mee verder kunt.</p>
 				</div>
-				<div class="card">
+				<div class="card feature-card feature-card--2">
 					<h3>Betrouwbare expertise</h3>
 					<p>Ervaring in ontwerp- <span class="en-highlight">en</span> uitvoeringsfase, met oog voor veiligheid en maakbaarheid.</p>
 				</div>
-				<div class="card">
+				<div class="card feature-card feature-card--3">
 					<h3>Persoonlijke aanpak</h3>
 					<p>Korte lijnen met één aanspreekpunt: Bas van Ooijen.</p>
 				</div>
@@ -68,14 +68,16 @@
 					<p>SDE staat voor Structural Design and Engineering. Als eenmanszaak levert Bas van Ooijen constructieve ontwerpen en adviezen, afgestemd op de vraag en het budget. Van schets tot detail, van advies tot begeleiding.</p>
 					<a class="link-arrow" href="over.html">Lees meer over SDE</a>
 				</div>
-				<div class="accent-box">
-					<h3>Diensten</h3>
-					<ul class="checklist">
-						<li>Constructief advies (ontwerp & uitvoering)</li>
-						<li>Technisch ontwerp & engineering</li>
-						<li>Voor particulieren, architecten, aannemers en ontwikkelaars</li>
-					</ul>
-					<a class="link-arrow" href="diensten.html">Alle diensten</a>
+				<div class="intro-right">
+					<aside class="accent-box intro-services-card">
+						<h3>Diensten</h3>
+						<ul class="checklist">
+							<li>Constructief advies (ontwerp & uitvoering)</li>
+							<li>Technisch ontwerp & engineering</li>
+							<li>Voor particulieren, architecten, aannemers en ontwikkelaars</li>
+						</ul>
+						<a class="link-arrow" href="diensten.html">Alle diensten</a>
+					</aside>
 				</div>
 			</div>
 		</section>
@@ -92,7 +94,7 @@
 						</div>
 					</div>
 					<div class="business-card-preview">
-						<div class="business-card-placeholder">
+						<div class="business-card-placeholder" onclick="openBusinessCard()" role="button" tabindex="0" aria-label="Bekijk visitekaartje">
 							<div class="placeholder-content">
 								<div class="business-card-logo">
 									<img src="SDE LOGO NB.png" alt="SDE Logo" class="business-card-logo-img">

@@ -24,28 +24,16 @@
 html,body{margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
-  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Ubuntu, Cantarell, 'Noto Sans', sans-serif;
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+  font-family: 'Gelasio', system-ui, -apple-system, 'Segoe UI', Roboto, Ubuntu, Cantarell, 'Noto Sans', sans-serif;
+  background: #ffffff;
   background-attachment: fixed;
   color: var(--text);
   line-height: 1.6;
   overflow-x: hidden;
 }
 
-/* Professional background pattern */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: 
-    radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.02) 0%, transparent 50%);
-  pointer-events: none;
-  z-index: -1;
-}
+/* Effen witte achtergrond (geen blauwe gloed overlay) */
+body::before { content: none; }
 img{max-width:100%;display:block}
 .container{width:min(1100px,92%);margin:0 auto}
 
@@ -61,7 +49,7 @@ img{max-width:100%;display:block}
   border-bottom: 1px solid var(--border);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   z-index: 50;
-  transition: all 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, backdrop-filter 0.35s ease, transform 0.3s ease;
 }
 
 .header-inner{
@@ -156,6 +144,54 @@ img{max-width:100%;display:block}
   margin: 5px 0;
   border-radius: 2px;
   transition: all 0.3s ease;
+}
+
+/* Home: header loopt over hero en fade't naar wit bij scroll */
+.home .site-header{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: transparent;
+  backdrop-filter: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: none;
+}
+
+.home .nav a{
+  color: rgba(255, 255, 255, 0.92);
+  transition: color 0.35s ease, background-color 0.35s ease;
+}
+.home .nav a:hover{
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.10);
+}
+.home .nav a.active{
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.16);
+}
+.home .site-header.is-scrolled{
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.home .site-header.is-scrolled .nav a{
+  color: var(--text);
+}
+.home .site-header.is-scrolled .nav a:hover{
+  color: var(--brand);
+  background: rgba(37, 99, 235, 0.05);
+}
+.home .site-header.is-scrolled .nav a.active{
+  color: var(--brand);
+  background: rgba(37, 99, 235, 0.1);
+}
+.home .site-header.is-scrolled .nav-toggle span{
+  background: var(--brand);
+}
+.home .hero{
+  padding-top: 120px;
 }
 
 /* Hero */
@@ -322,6 +358,13 @@ img{max-width:100%;display:block}
   align-items: start;
 }
 
+.intro-right{
+  display: grid;
+  gap: 18px;
+  align-content: start;
+  justify-items: start;
+}
+
 .card{
   background: white;
   border: 1px solid var(--border);
@@ -366,6 +409,37 @@ img{max-width:100%;display:block}
   overflow: hidden;
 }
 
+/* Diensten-blokje naast "Over SDE" in visitekaartje-stijl */
+.intro-services-card{
+  background: #ffffff;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  padding: 22px;
+  cursor: default;
+  aspect-ratio: 85 / 55;
+  display: grid;
+  align-content: start;
+}
+.intro-services-card:hover{
+  transform: none;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+.intro-services-card h3{
+  color: var(--brand);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  margin-top: 0;
+}
+
+.intro-right{
+  display: grid;
+  gap: 18px;
+  align-content: start;
+  justify-items: start;
+}
+
 .accent-box h3 {
   color: var(--brand);
   font-weight: 700;
@@ -399,23 +473,118 @@ img{max-width:100%;display:block}
   position: relative;
 }
 
+/* Geen blauwe sectie-overlay */
+.features::before { content: none; }
+
+/* Features "slideshow": 3 panels full-width, expand on hover */
+.features .card-slider{
+  display: flex;
+  gap: 18px;
+  width: 100vw;
+  max-width: none;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: 16px;
+  padding-right: 16px;
+  overflow: hidden;
+}
+
+.features .card-slider .card{
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 34px;
+  border-radius: 16px;
+  min-height: 560px;
+  transition: flex 0.55s ease, opacity 0.45s ease, transform 0.55s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.features .card-slider .feature-card{
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--text-light);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+.features .card-slider .feature-card h3{ color: #ffffff; }
+.features .card-slider .feature-card p{ color: rgba(248, 250, 252, 0.92); }
+
+.features .card-slider .feature-card--1{
+  background-image:
+    linear-gradient(135deg, rgba(15, 23, 42, 0.78) 0%, rgba(15, 23, 42, 0.52) 100%),
+    url("../img/project-spiegeltent.jpg");
+}
+.features .card-slider .feature-card--2{
+  background-image:
+    linear-gradient(135deg, rgba(15, 23, 42, 0.78) 0%, rgba(15, 23, 42, 0.52) 100%),
+    url("../img/project-woontoren.jpg");
+}
+.features .card-slider .feature-card--3{
+  background-image:
+    linear-gradient(135deg, rgba(15, 23, 42, 0.78) 0%, rgba(15, 23, 42, 0.52) 100%),
+    url("../img/project-kantoorgebouw.jpg");
+}
+
+.features .card-slider .card h3{ font-size: 1.6rem; }
+.features .card-slider .card p{ font-size: 1.12rem; line-height: 1.7; }
+
+.features .card-slider.has-expanded .card{
+  flex: 0 0 0;
+  opacity: 0;
+  padding-left: 0;
+  padding-right: 0;
+  border-width: 0;
+  pointer-events: none;
+  transform: scale(0.98);
+}
+.features .card-slider.has-expanded .card.is-expanded{
+  flex: 1 0 100%;
+  opacity: 1;
+  padding: 46px;
+  border-width: 1px;
+  pointer-events: auto;
+  transform: scale(1);
+  min-height: 620px;
+}
+.features .card-slider.has-expanded .card.is-expanded h3{ font-size: 2rem; }
+.features .card-slider.has-expanded .card.is-expanded p{
+  font-size: 1.2rem;
+  max-width: 80ch;
+}
+
+@media (max-width: 880px){
+  .features .card-slider{
+    display: grid;
+    grid-template-columns: 1fr;
+    width: auto;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    overflow: visible;
+  }
+  .features .card-slider.has-expanded .card{
+    flex: initial;
+    opacity: 1;
+    padding: 24px;
+    border-width: 1px;
+    pointer-events: auto;
+    transform: none;
+    min-height: auto;
+  }
+  .features .card-slider.has-expanded .card.is-expanded{
+    padding: 24px;
+    min-height: auto;
+  }
+}
+
 .business-card{
   padding: 60px 0;
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.03) 0%, rgba(37, 99, 235, 0.01) 100%);
+  background: #ffffff;
   position: relative;
 }
 
 .business-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 80% 50%, rgba(37, 99, 235, 0.03) 0%, transparent 50%);
-  pointer-events: none;
+  content: none;
 }
 
 .business-card-inner{
@@ -468,12 +637,13 @@ img{max-width:100%;display:block}
 }
 
 .business-card-placeholder {
-  width: 300px;
-  height: 180px;
+  width: min(420px, 100%);
+  aspect-ratio: 85 / 55;
+  height: auto;
   background: white;
   border: 2px solid var(--border);
   border-radius: 12px;
-  padding: 20px;
+  padding: 22px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
   cursor: pointer;
@@ -505,6 +675,7 @@ img{max-width:100%;display:block}
 .placeholder-content p {
   margin: 2px 0;
   font-size: 11px;
+  overflow-wrap: anywhere;
 }
 
 .placeholder-content hr {
