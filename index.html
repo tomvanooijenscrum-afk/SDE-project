@@ -1,151 +1,435 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="nl">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>SDE – Structural Design and Engineering | Home</title>
-	<meta name="description" content="Constructief advies van ontwerp tot uitvoering. SDE – Bas van Ooijen.">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Gelasio:wght@400;500;600;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="assets/css/styles.css">
-	<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🏗️</text></svg>">
-</head>
-<body class="home">
-	<header class="site-header">
-		<div class="container header-inner">
-			<a class="logo" href="index.html">
-				<img src="SDE LOGO NB.png" alt="SDE Logo" class="logo-img">
-			</a>
-			<nav class="nav" id="site-nav" aria-label="Hoofdnavigatie">
-				<a href="index.html" class="active">Home</a>
-				<a href="over.html">Over SDE</a>
-				<a href="diensten.html">Diensten</a>
-				<a href="projecten.html">Projecten</a>
-				<a class="cta" href="contact.html">Contact</a>
-			</nav>
-			<button class="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Menu">
-				<span></span><span></span><span></span>
-			</button>
-		</div>
-	</header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SDE | Constructieve zekerheid voor complexe bouwprojecten</title>
+    <meta
+      name="description"
+      content="SDE is het constructiebureau van Bas van Ooijen. Pragmatisch constructief advies, constructieve berekeningen, second opinions en projectondersteuning voor complexe bouwprojecten."
+    />
+    <meta
+      name="keywords"
+      content="constructeur, constructief adviseur, constructiebureau, constructieve berekeningen, staalconstructies, betonconstructies, projectmanagement, engineering, second opinion, bouwconstructies"
+    />
+    <meta property="og:title" content="SDE | Constructieve zekerheid voor complexe bouwprojecten" />
+    <meta
+      property="og:description"
+      content="Ervaren constructief ontwerper en ingenieur voor woningbouw, utiliteitsbouw, industrie, infrastructuur en complexe integrale opgaven."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/images/project-hero.webp" />
+    <meta name="theme-color" content="#141414" />
+    <link rel="icon" type="image/png" href="assets/images/logo-full.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "EngineeringConsultant",
+        "name": "SDE",
+        "url": "",
+        "logo": "assets/images/logo-full.png",
+        "description": "SDE is het constructiebureau van Bas van Ooijen voor constructief ontwerp, berekeningen, second opinions en projectondersteuning.",
+        "founder": {
+          "@type": "Person",
+          "name": "Bas van Ooijen"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Lingedijk 24",
+          "postalCode": "4191 VE",
+          "addressLocality": "Geldermalsen",
+          "addressCountry": "NL"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "telephone": "+31 345 752 516",
+          "email": "info@sde-engineering.nl"
+        },
+        "keywords": [
+          "constructeur",
+          "constructief adviseur",
+          "constructiebureau",
+          "constructieve berekeningen",
+          "staalconstructies",
+          "betonconstructies",
+          "projectmanagement",
+          "engineering"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <div class="container header-inner">
+        <a class="brand" href="#top" aria-label="SDE home">
+          <img src="assets/images/logo-primary.png" alt="SDE logo" class="brand-logo" />
+        </a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigatie">
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="Hoofdnavigatie">
+          <a href="#diensten">Diensten</a>
+          <a href="#projecten">Projecten</a>
+          <a href="#ervaring">Ervaring</a>
+          <a href="#expertise">Expertise</a>
+          <a href="#waarom-sde">Waarom SDE</a>
+          <a href="#contact" class="nav-cta">Neem contact op</a>
+        </nav>
+      </div>
+    </header>
 
-	<main>
-		<section class="hero">
-			<div class="container hero-inner">
-				<div class="hero-copy">
-					<h1>Constructief advies van ontwerp tot uitvoering</h1>
-					<p>SDE (Structural Design and Engineering) levert helder, betrouwbaar en praktisch constructief advies voor architecten, aannemers en ontwikkelaars.</p>
-					<div class="hero-actions">
-						<a class="btn primary" href="contact.html">Neem contact op</a>
-						<a class="btn" href="diensten.html">Bekijk diensten</a>
-					</div>
-				</div>
-			</div>
-		</section>
+    <main>
+      <section class="hero">
+        <div class="hero-media">
+          <img src="assets/images/project-hero.webp" alt="Projectbeeld van een constructieve bouwopgave" />
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-inner">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">Constructief adviesbureau van Bas van Ooijen</p>
+            <h1>Constructieve zekerheid voor complexe bouwprojecten.</h1>
+            <p class="hero-lead">
+              SDE helpt architecten, ontwikkelaars, aannemers en gemeenten met doordachte constructieve oplossingen
+              die veilig, maakbaar en economisch verantwoord zijn.
+            </p>
+            <p class="hero-subcopy">
+              Pragmatische advisering, sterke ontwerpgevoeligheid en decennialange ervaring in zowel ontwerp- als
+              uitvoeringsfase zorgen voor rust in projecten waar veel op het spel staat.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#projecten">Bekijk Projecten</a>
+              <a class="button button-secondary" href="#contact">Neem Contact Op</a>
+            </div>
+            <ul class="hero-badges" aria-label="Belangrijke kenmerken">
+              <li>Constructieve veiligheid</li>
+              <li>Maakbaarheid</li>
+              <li>Kostenbeheersing</li>
+              <li>Snelle besluitvorming</li>
+            </ul>
+          </div>
+          <aside class="hero-panel reveal">
+            <div class="hero-panel-card">
+              <p class="panel-label">Direct vertrouwen opbouwen</p>
+              <h2>Waarom opdrachtgevers SDE inschakelen</h2>
+              <ul class="panel-list">
+                <li>27+ jaar ervaring in complexe bouwconstructies</li>
+                <li>Leiderschapservaring bij WSP en Grontmij</li>
+                <li>Ervaring met woningbouw, industrie, utiliteit en infrastructuur</li>
+                <li>Onafhankelijk advies met focus op veiligheid en uitvoerbaarheid</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </section>
 
-		<section class="features">
-			<div class="container grid-3 card-slider" aria-label="Kernpunten">
-				<div class="card feature-card feature-card--1">
-					<h3>Zakelijk en helder</h3>
-					<p>Heldere communicatie en concrete adviezen waar u direct mee verder kunt.</p>
-				</div>
-				<div class="card feature-card feature-card--2">
-					<h3>Betrouwbare expertise</h3>
-					<p>Ervaring in ontwerp- <span class="en-highlight">en</span> uitvoeringsfase, met oog voor veiligheid en maakbaarheid.</p>
-				</div>
-				<div class="card feature-card feature-card--3">
-					<h3>Persoonlijke aanpak</h3>
-					<p>Korte lijnen met één aanspreekpunt: Bas van Ooijen.</p>
-				</div>
-			</div>
-		</section>
+      <section class="stats section">
+        <div class="container">
+          <div class="stats-grid">
+            <article class="stat-card reveal">
+              <p class="stat-value" data-count="27">0</p>
+              <p class="stat-label">Jaar ervaring</p>
+            </article>
+            <article class="stat-card reveal">
+              <p class="stat-value" data-count="100">0</p>
+              <p class="stat-label">Projecten in ontwerp en uitvoering</p>
+            </article>
+            <article class="stat-card reveal">
+              <p class="stat-value">Complex</p>
+              <p class="stat-label">Beton-, staal- en hybride constructies</p>
+            </article>
+            <article class="stat-card reveal">
+              <p class="stat-value" data-count="22">0</p>
+              <p class="stat-label">FTE aangestuurd in leidinggevende rollen</p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-		<section class="intro">
-			<div class="container two-col">
-				<div>
-					<h2>Over SDE</h2>
-					<p>SDE staat voor Structural Design and Engineering. Als eenmanszaak levert Bas van Ooijen constructieve ontwerpen en adviezen, afgestemd op de vraag en het budget. Van schets tot detail, van advies tot begeleiding.</p>
-					<a class="link-arrow" href="over.html">Lees meer over SDE</a>
-				</div>
-				<div class="intro-right">
-					<aside class="accent-box intro-services-card">
-						<h3>Diensten</h3>
-						<ul class="checklist">
-							<li>Constructief advies (ontwerp & uitvoering)</li>
-							<li>Technisch ontwerp & engineering</li>
-							<li>Voor particulieren, architecten, aannemers en ontwikkelaars</li>
-						</ul>
-						<a class="link-arrow" href="diensten.html">Alle diensten</a>
-					</aside>
-				</div>
-			</div>
-		</section>
+      <section class="section section-light" id="over">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Over SDE</p>
+            <h2>Een ervaren constructeur die ontwerpkwaliteit verbindt met uitvoerbare oplossingen.</h2>
+            <p>
+              Bas van Ooijen is een constructief ontwerper en ingenieur met ruime ervaring in zowel de ontwerp- als
+              uitvoeringsfase van bouwprojecten. Zijn aanpak is pragmatisch, zorgvuldig en gericht op constructieve
+              veiligheid, maakbaarheid, efficiëntie en kostenbeheersing.
+            </p>
+          </div>
+          <div class="about-grid">
+            <div class="about-portrait reveal">
+              <img src="assets/images/bas-van-ooijen.jpg" alt="Portret van Bas van Ooijen" />
+            </div>
+            <div class="about-content">
+              <article class="content-card reveal">
+                <h3>Visie</h3>
+                <p>
+                  Goede constructieve engineering is meer dan rekenen. Het gaat om het vroeg signaleren van risico’s,
+                  het versterken van ontwerpkeuzes en het creëren van oplossingen die in de praktijk werkelijk werken.
+                </p>
+              </article>
+              <article class="content-card reveal">
+                <h3>Werkwijze</h3>
+                <p>
+                  SDE werkt helder, direct en zorgvuldig. Van concept tot uitvoering worden keuzes onderbouwd met een
+                  scherp oog voor haalbaarheid, planning, kosten en samenhang tussen disciplines.
+                </p>
+              </article>
+              <article class="content-card reveal">
+                <h3>Samenwerking</h3>
+                <p>
+                  Bas is gewend om te schakelen met architecten, aannemers, ontwikkelaars, gemeenten en technische
+                  adviseurs. Dat maakt besluitvorming sneller en voorkomt verrassingen later in het traject.
+                </p>
+              </article>
+              <article class="content-card reveal">
+                <h3>Ontwerpfilosofie</h3>
+                <p>
+                  De beste constructie ondersteunt het ontwerp, beperkt uitvoeringsrisico’s en blijft economisch
+                  rationeel. SDE zoekt naar die balans in ieder project.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
 
-		<section class="business-card">
-			<div class="container">
-				<div class="business-card-inner">
-					<div class="business-card-content">
-						<h2>Visitekaartje</h2>
-						<p>Download of bekijk het visitekaartje van SDE voor alle contactgegevens en informatie.</p>
-						<div class="business-card-actions">
-							<button class="btn primary" onclick="openBusinessCard()">Bekijk visitekaartje</button>
-							<a class="btn" href="SDE Visitekaartje.pdf" download="Visitekaartje-SDE-Van-Ooijen.jpg">Download PDF</a>
-						</div>
-					</div>
-					<div class="business-card-preview">
-						<div class="business-card-placeholder" onclick="openBusinessCard()" role="button" tabindex="0" aria-label="Bekijk visitekaartje">
-							<div class="placeholder-content">
-								<div class="business-card-logo">
-									<img src="SDE LOGO NB.png" alt="SDE Logo" class="business-card-logo-img">
-								</div>
-								<p>Van Ooijen</p>
-								<p>Structural Design & Engineering</p>
-								<hr>
-								<p><strong>ing. A.B. van Ooijen PMSE rc</strong></p>
-								<p>Directeur</p>
-								<hr>
-								<p>Lingedijk 24</p>
-								<p>4191 VE Geldermalsen</p>
-								<p>tel: 0345752516</p>
-								<p>mob: 0640219973</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+      <section class="section" id="diensten">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Diensten</p>
+            <h2>Constructieve expertise voor ontwerp, toetsing en uitvoering.</h2>
+            <p>
+              SDE ondersteunt projecten in verschillende fasen, van eerste haalbaarheidsstudie tot technische uitwerking
+              en begeleiding tijdens realisatie.
+            </p>
+          </div>
+          <div class="services-grid" id="services-grid"></div>
+        </div>
+      </section>
 
-		<section class="cta-banner">
-			<div class="container banner-inner">
-				<h2>Klaar om te starten?</h2>
-				<p>Bespreek vrijblijvend uw project of vraag. Samen komen we tot een veilige en efficiënte oplossing.</p>
-				<a class="btn primary" href="contact.html">Contact opnemen</a>
-			</div>
-		</section>
-	</main>
+      <section class="section section-dark" id="waarom-sde">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Waarom SDE</p>
+            <h2>Advies dat vertrouwen geeft in projecten waar fouten duur zijn.</h2>
+            <p>
+              Voor opdrachtgevers die tempo willen houden zonder concessies te doen aan kwaliteit, veiligheid of
+              maakbaarheid.
+            </p>
+          </div>
+          <div class="reasons-grid" id="reasons-grid"></div>
+        </div>
+      </section>
 
-	<footer class="site-footer">
-		<div class="container footer-inner">
-			<div class="footer-brand">
-				<img src="SDE LOGO NB.png" alt="SDE Logo" class="footer-logo">
-				<div class="footer-brand-text">
-					<strong>SDE – Structural Design and Engineering</strong>
-					<p>Lingedijk 24, 4191 VB Geldermalsen</p>
-				</div>
-			</div>
-			<nav class="footer-nav">
-				<a href="over.html">Over</a>
-				<a href="diensten.html">Diensten</a>
-				<a href="projecten.html">Projecten</a>
-				<a href="contact.html">Contact</a>
-			</nav>
-		</div>
-		<div class="container copyright">
-			<p>© <span id="year"></span> SDE – Bas van Ooijen. Alle rechten voorbehouden.</p>
-		</div>
-	</footer>
+      <section class="section section-light" id="projecten">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Projecten</p>
+            <h2>Werk dat laat zien hoe SDE omgaat met schaal, complexiteit en verantwoordelijkheid.</h2>
+            <p>
+              Van waterzuiveringen en hoogbouwmagazijnen tot woongebouwen, onderwijs en stationsgebieden: projecten
+              waarin constructieve keuzes direct invloed hebben op kwaliteit, risico en voortgang.
+            </p>
+          </div>
+          <div class="projects-toolbar reveal">
+            <label class="search-field">
+              <span class="sr-only">Zoek project</span>
+              <input type="search" id="project-search" placeholder="Zoek op project, locatie, sector of rol" />
+            </label>
+            <div class="filter-group" id="project-filters" aria-label="Projectfilters"></div>
+          </div>
+          <div class="projects-grid" id="projects-grid"></div>
+        </div>
+      </section>
 
-	<script src="assets/js/main.js"></script>
-</body>
+      <section class="section" id="ervaring">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Ervaring</p>
+            <h2>Gebouwd op decennia praktijkervaring.</h2>
+            <p>
+              De kracht van SDE komt niet alleen uit technische kennis, maar ook uit jarenlange verantwoordelijkheid
+              binnen toonaangevende ingenieursorganisaties en multidisciplinaire projectomgevingen.
+            </p>
+          </div>
+          <div class="experience-story">
+            <article class="story-card reveal">
+              <h3>Leidinggevende basis bij WSP</h3>
+              <p>
+                Binnen WSP was Bas actief als senior adviseur constructies en afdelingshoofd. Daar stuurde hij teams aan,
+                bewaakte hij kwaliteit, bepaalde hij mede de koers van de business unit en leidde hij complexe projecten
+                van ontwerp tot realisatie.
+              </p>
+            </article>
+            <article class="story-card reveal">
+              <h3>Management en projectverantwoordelijkheid bij Grontmij</h3>
+              <p>
+                Bij Grontmij groeide hij door van projectleider en senior adviseur naar hoofd constructieadvies en
+                manager bouw regio Randstad. Die combinatie van inhoud en leiderschap vormt nog steeds de kern van de
+                SDE-aanpak.
+              </p>
+            </article>
+            <article class="story-card reveal">
+              <h3>Diepe technische basis uit eerdere bureaus</h3>
+              <p>
+                De jaren bij Strackee en Ingenieursbureau Bartels legden de technische fundering: ontwerpen, detailleren,
+                rekenen en het leren doorgronden van constructies tot in de essentie.
+              </p>
+            </article>
+          </div>
+          <div class="timeline reveal" id="experience-timeline"></div>
+        </div>
+      </section>
+
+      <section class="section section-light" id="expertise">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Expertise</p>
+            <h2>Brede constructieve kennis, toegepast met focus en nuchterheid.</h2>
+            <p>
+              Specialistische inhoud is belangrijk, maar het echte verschil zit in het vermogen om complexe informatie
+              terug te brengen tot heldere keuzes.
+            </p>
+          </div>
+          <div class="expertise-grid" id="expertise-grid"></div>
+        </div>
+      </section>
+
+      <section class="section" id="testimonials">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Vertrouwen</p>
+            <h2>Zo kan SDE professioneel gepositioneerd worden richting nieuwe opdrachtgevers.</h2>
+            <p>
+              Hieronder staan nette placeholder testimonials die later eenvoudig vervangen kunnen worden door echte
+              referenties van architecten, ontwikkelaars of aannemers.
+            </p>
+          </div>
+          <div class="testimonials-grid" id="testimonials-grid"></div>
+        </div>
+      </section>
+
+      <section class="section section-light" id="faq">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Veelgestelde vragen</p>
+            <h2>Antwoorden die drempels voor een eerste gesprek verlagen.</h2>
+          </div>
+          <div class="faq-list" id="faq-list"></div>
+        </div>
+      </section>
+
+      <section class="section cta-section">
+        <div class="container cta-card reveal">
+          <div>
+            <p class="eyebrow">Klaar om te schakelen?</p>
+            <h2>Zoekt u een ervaren constructeur die snel tot heldere keuzes komt?</h2>
+            <p>
+              SDE ondersteunt projecten met onafhankelijk advies, constructieve zekerheid en oog voor uitvoering.
+            </p>
+          </div>
+          <a class="button button-primary" href="#contact">Vraag direct advies aan</a>
+        </div>
+      </section>
+
+      <section class="section section-dark" id="contact">
+        <div class="container">
+          <div class="contact-grid">
+            <div class="contact-copy reveal">
+              <p class="eyebrow">Contact</p>
+              <h2>Bespreek uw project, second opinion of constructieve vraagstuk.</h2>
+              <p>
+                SDE is beschikbaar voor ontwerpteams, uitvoerende partijen en opdrachtgevers die behoefte hebben aan
+                degelijk constructief advies en snelle inhoudelijke afstemming.
+              </p>
+              <div class="contact-cards">
+                <a class="contact-card" href="mailto:info@sde-engineering.nl">
+                  <span class="contact-label">E-mail</span>
+                  <strong>info@sde-engineering.nl</strong>
+                </a>
+                <a class="contact-card" href="tel:+31345752516">
+                  <span class="contact-label">Telefoon</span>
+                  <strong>0345 752 516</strong>
+                </a>
+                <a class="contact-card" href="tel:+31640219973">
+                  <span class="contact-label">Mobiel</span>
+                  <strong>06 4021 9973</strong>
+                </a>
+                <div class="contact-card">
+                  <span class="contact-label">Locatie</span>
+                  <strong>Lingedijk 24, 4191 VE Geldermalsen</strong>
+                </div>
+                <div class="contact-card contact-card-muted">
+                  <span class="contact-label">LinkedIn</span>
+                  <strong>Nog handmatig invullen</strong>
+                </div>
+              </div>
+            </div>
+            <div class="contact-form-card reveal">
+              <h3>Vraag advies aan</h3>
+              <form id="contact-form" novalidate>
+                <div class="form-row">
+                  <label for="name">Naam</label>
+                  <input id="name" name="name" type="text" placeholder="Bijv. Jan de Vries" required />
+                </div>
+                <div class="form-row">
+                  <label for="company">Bedrijf</label>
+                  <input id="company" name="company" type="text" placeholder="Bijv. Architectenbureau X of Gemeente Y" />
+                </div>
+                <div class="form-row">
+                  <label for="email">E-mail</label>
+                  <input id="email" name="email" type="email" placeholder="Bijv. naam@bedrijf.nl" required />
+                </div>
+                <div class="form-row">
+                  <label for="phone">Telefoon</label>
+                  <input id="phone" name="phone" type="tel" placeholder="Bijv. 06 12345678" />
+                </div>
+                <div class="form-row">
+                  <label for="message">Projectvraag</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    placeholder="Bijv. Wij zoeken een constructeur voor de ontwerpfase van een appartementencomplex in Utrecht. Kunt u meedenken over de hoofddraagconstructie, maakbaarheid en een eerste constructieve opzet?"
+                    required
+                  ></textarea>
+                </div>
+                <button class="button button-primary button-full" type="submit">Open e-mailconcept</button>
+                <p class="form-status" aria-live="polite"></p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <img src="assets/images/logo-mark.png" alt="SDE beeldmerk" class="footer-logo" />
+          <p>
+            SDE | Constructief ontwerp, advies en engineering voor projecten waar veiligheid, maakbaarheid en kwaliteit
+            samen moeten komen.
+          </p>
+        </div>
+        <div class="footer-meta">
+          <p>&copy; <span id="year"></span> SDE</p>
+          <a href="#top">Terug naar boven</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>

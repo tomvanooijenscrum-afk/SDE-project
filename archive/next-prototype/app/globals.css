@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(177, 138, 90, 0.12), transparent 28%),
+    linear-gradient(to bottom, #faf8f4, #f4f1ea);
+  color: #111111;
+}
+
+::selection {
+  background: rgba(177, 138, 90, 0.24);
+}
