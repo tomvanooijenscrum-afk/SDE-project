@@ -909,8 +909,9 @@ textarea {
 
 .site-footer {
   padding: 30px 0;
-  background: #0d0d0d;
-  color: rgba(247, 244, 239, 0.75);
+  background: #fff;
+  color: var(--text-soft);
+  border-top: 1px solid var(--line);
 }
 
 .footer-inner {
@@ -945,7 +946,7 @@ textarea {
 
 .footer-meta a:hover,
 .footer-meta a:focus-visible {
-  color: #fff;
+  color: var(--accent);
 }
 
 .empty-state {

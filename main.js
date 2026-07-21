@@ -371,7 +371,7 @@
 
       status.textContent = "Je e-mailprogramma wordt geopend.";
       window.location.href =
-        "mailto:info@sde-engineering.nl?subject=" +
+        "mailto:Vanooijen-sde@outlook.com?subject=" +
         encodeURIComponent(subject) +
         "&body=" +
         encodeURIComponent(body);
